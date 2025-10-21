@@ -1,0 +1,87 @@
+<% layout("/layouts/boilerplate") %>
+<body>
+    
+    <div class="row">
+        <div class="col-8 offset-2" >
+        <h1 >Edit details</h1>
+        <form method="post" action="/listings/<%=data._id%>?_method=put" class="needs-validation" novalidate enctype="multipart/form-data">
+            <br><br>
+            
+            <div class="mb-3">
+                <label for="title" class="form-label">Title:</label>
+                <input type="text" name="listing[title]" placeholder="Enter Title:" id="title" class="form-control" value="<%= data.title %>" required>
+
+                <div class="valid-feedback">बरोबार आहे!</div>
+                <div class="invalid-feedback">बरोबर टाक</div>
+            </div>
+            <div class="mb-3">
+                <label for="description" class="form-label">Description:</label>
+                <textarea name="listing[description]" placeholder="Enter description:" class="form-control" id="description" required><%= data.description %></textarea>
+                <div class="valid-feedback">बरोबार आहे!</div>
+                <div class="invalid-feedback">बरोबर टाक</div>
+            </div>
+            <div class="mb-3">
+                <h7>Original Image:</h7>
+                 <br>
+                <img src="<%= originalImageUrl %>" alt="Image" >
+            </div>
+        
+            <div class="mb-3">
+                <label for="image" class="form-label">Upload New Image :</label>
+                <input type="file" name="listing[image]" id="image" class="form-control">
+                <div class="valid-feedback">बरोबार आहे!</div>
+                <div class="invalid-feedback">बरोबर टाक</div>
+            </div>
+
+            <div class="mb-3">
+                <label for="Category" class="form-label">Category:</label>
+                <!-- <textarea name="listing[category]" placeholder="Enter description:" class="form-control" id="Category" required></textarea> -->
+                <select name="listing[category]" id="Category" class="form-control" required>
+                    <option value="null"></option>
+                    <option value="mountains">Mountains</option>
+                    <option value="farms">Farms</option>
+                    <option value="iconic">Iconic Cities</option>
+                    <option value="pool">Amazing Pool</option>
+                    <option value="arctic">Arctic</option>
+                 
+                </select>
+                <div class="valid-feedback">बरोबार आहे!</div>
+                <div class="invalid-feedback">बरोबर टाक</div>
+            </div>
+
+            <div class="row">
+                <div class="mb-3 col-md-4">
+                    <label for="price" class="form-label">Price:</label>
+                    <input type="number" name="listing[price]" placeholder="Price:" class="form-control" id="price" value="<%= data.price %>" required>
+                    <div class="valid-feedback">बरोबार आहे!</div>
+                    <div class="invalid-feedback">बरोबर टाक</div>
+
+                </div>
+            
+        
+                <div class="mb-3 col-md-8">
+                    <label for="location" class="form-label">Location:</label>
+                    <input type="text" name="listing[location]" placeholder="location" class="form-control" id="location" value="<%= data.location %> " required>
+                    <div class="valid-feedback">बरोबार आहे!</div>
+                    <div class="invalid-feedback">बरोबर टाक</div>
+                </div>
+                
+            </div>
+           
+        
+            <div class="mb-3">
+                <label for="country" class="form-label">Country:</label>
+                <input type="text" name="listing[country]" placeholder="Country" class="form-control" id="country" value="<%= data.country %>" required>
+                <div class="valid-feedback">बरोबार आहे!</div>
+                <div class="invalid-feedback">बरोबर टाक</div>
+            </div>
+           
+            <br><br>
+                <button type="submit" class="but btn-dark edit-btn">EDIT</button>
+            <br><br>
+        </form>
+        </div>
+    </div>
+    
+    
+</body>
