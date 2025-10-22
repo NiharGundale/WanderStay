@@ -39,7 +39,7 @@
 
       <div class="navbar-nav ms-auto">
         
-        <% if (!currUser) { %>
+        <% if (!res.locals.currUsercurr) { %>
           <a class="btn btn-primary me-2" href="/login">Login</a>
           <br>
           <a class="btn btn-primary me-2" href="/SignUp">SignUp</a>
@@ -47,7 +47,7 @@
          
         <% } %>
 
-        <% if (currUser) { %>
+        <% if (res.locals.currUsercurr) { %>
           <a class="btn btn-primary me-2" href="/logout">Logout</a>
          
         <% } %>
