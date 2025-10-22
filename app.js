@@ -88,7 +88,15 @@ app.listen(3000,()=>{
 
 
 async function main() {
-  await mongoose.connect(dburl);
+  await mongoose.connect(dburl,{
+    
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    ssl: true,
+    tls: true,
+    tlsAllowInvalidCertificates: false,
+
+  });
 
   
 }
